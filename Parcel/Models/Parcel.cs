@@ -14,18 +14,17 @@ namespace Parcel.Models
     public Package(int[] dimensions, int weight)
     {
       Weight = weight;
-      Volume = Volume(dimensions);
+      Volume = VolumeCalc(dimensions);
       _cart.Add(this);
     }
 
-    public int Volume(int[] sides)
+    public int VolumeCalc(int[] sides)
     {
       return sides[0]*sides[1]*sides[2];
     }
 
     public float CostToShip()
     {
-      int cost;
       if (Weight >= 2 || Volume >= 204)
       {
         return 4;
@@ -42,6 +41,21 @@ namespace Parcel.Models
       {
         return 40;
       }
+    }
+
+    public static List<Package> GetAll()
+    {
+      return _cart;
+    }
+
+    public int GetWeight()
+    {
+      return Weight;
+    }
+
+    public int GetVolume()
+    {
+      return Volume;
     }
   }
 }

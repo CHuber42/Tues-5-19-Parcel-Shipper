@@ -9,8 +9,27 @@ namespace Parcel.Controllers
     [HttpGet("/")]
     public ActionResult Home()
     {
-      return View("Index");
+      List<Package> packages = Package.GetAll();
+      return View("Index", packages);
     }
 
   }
 }
+
+  // [HttpGet("/")]
+  //   public ActionResult Index(Item myItem)
+  //   {
+  //     List<Item> allItems = Item.GetAll();
+  //     return View("Index", allItems);
+  //   }
+
+
+
+//  [HttpPost("/items")]
+//     public ActionResult Create(string description)
+//     {
+//       Item myItem = new Item(description);
+//       return RedirectToAction("Index", myItem);
+//     }
+    
+//   }

@@ -6,7 +6,7 @@ namespace Parcel.Controllers
 {
   public class ParcelController : Controller
   {
-    [HttpGet("/NewItem")]
+    [HttpGet("/NewParcel")]
     public ActionResult NewParcel()
     {
       return View("NewParcel");
@@ -17,6 +17,7 @@ namespace Parcel.Controllers
     {
       int[] dimensions = new int[] {height, length, width};
       Package newItem = new Package(dimensions, weight);
+      return RedirectToAction("Home", "Home"); 
     }
 
   }
