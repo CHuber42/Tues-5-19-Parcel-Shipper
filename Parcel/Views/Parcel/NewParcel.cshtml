@@ -2,12 +2,12 @@
 
 <form action="/AddItem" method="post">
   <label for="height">Package Height</label>
-  <input name="height" id="height" type="number" required>
+  <input name="height" id="height" type="number" required min="1">
   <label for="width">Package Width</label>
-  <input name="width" id="width" type="number" required>
+  <input name="width" id="width" type="number" required min="1">
   <label for="length">Package Length</label>
-  <input name="length" id="length" type="number" required>
+  <input name="length" id="length" type="number" required min="1">
   <label for="weight">Weight (in pounds)</label>
-  <input name="weight" id="weight" type="number" required>
+  <input name="weight" id="weight" type="number" required min="1">
   <button type="submit">Add Package</button>
 </form>

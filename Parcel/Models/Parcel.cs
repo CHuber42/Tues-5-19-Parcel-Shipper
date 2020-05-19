@@ -25,21 +25,32 @@ namespace Parcel.Models
 
     public float CostToShip()
     {
-      if (Weight >= 2 || Volume >= 204)
+      if (Weight >= 20 || Volume >= 1832)
       {
-        return 4;
-      }
-      else if (Weight >= 5 || Volume >= 408)
-      {
-        return 10;
+        return 40;   
       }
       else if (Weight >= 10 || Volume >= 916)
       {
         return 20;
       }
-      else
+      else if (Weight >= 5 || Volume >= 408)
       {
-        return 40;
+        return 10;
+      }
+      else if (Weight >= 2 || Volume >= 204)
+      {
+        return 4;
+      }
+      else if (Weight >= 0 || Volume >= 0)
+      {
+        return 1;
+      }
+      else if (Weight < 0 || Volume < 0)
+      {
+        return 1000000000000;
+      }
+      else {
+        return 0;
       }
     }
 
